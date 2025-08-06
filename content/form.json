@@ -1,0 +1,22 @@
+{
+  "title": "How to create a good form",
+  "description": "Based on Evil Martians blogpost",
+  "created_at": "2025-08-06",
+  "items": [
+    {
+      "id": "hccfwtLstEBz2oFW0mRvK",
+      "title": "Set autocomplete",
+      "content_text": "Add autocomplete flags to all inputs"
+    },
+    {
+      "id": "6wCvkTB2Na2BX_NWYssgI",
+      "title": "Block form during submitting",
+      "content_text": "When a form is being submitted, it's okay to make it work like this.\n\nDon't forget to return to the base values."
+    },
+    {
+      "id": "dtwsOxbWHAoldLRA81D4x",
+      "title": "Set aria tags",
+      "content_text": "Set aria-errormessage and aria-invalid tags."
+    }
+  ]
+}
