@@ -25,7 +25,7 @@ const routeName = computed(() => `list-${props.stem}`)
     gap: 4px;
     padding: 8px;
     font-family: sans-serif;
-    box-shadow: 1px 1px 1px 1px black;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     overflow: hidden;
     min-height: 100px;
 }

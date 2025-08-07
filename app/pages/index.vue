@@ -2,32 +2,43 @@
 const { data } = await useAsyncData('all', () => {
   return queryCollection('lists').all()
 })
+
+const query = ref('')
+
+const result = computed(() => query.value ? data.value?.filter(item => item.title.toLowerCase().indexOf(query.value.toLowerCase())!== -1) : data.value)
+
+function onSearch(e: Event) {
+  const text = (e.target as HTMLInputElement).value
+  query.value = text 
+}
 </script>
 
 <template>
-<h2> The list:  </h2> 
-<div class="grid">
-<CChecklistCard v-for="item in data" :key="item.id" :stem="item.stem" :title="item.title" :description="item.description"/>
-</div>
+  <h2> The list: </h2>
+  <input type="search"  name="search" @search="onSearch" placeholder="Search checklists" />
+  <div class="grid">
+    <CChecklistCard v-for="item in result" :key="item.id" :stem="item.stem" :title="item.title"
+      :description="item.description" />
+  </div>
 </template>
 
 <style scoped>
 .grid {
-    grid-row-gap: 16px;
-    grid-column-gap: 16px;
-    grid-template-rows: auto auto;
-    grid-auto-columns: 1fr;
-    display: grid;
+  grid-row-gap: 16px;
+  grid-column-gap: 16px;
+  grid-template-rows: auto auto;
+  grid-auto-columns: 1fr;
+  display: grid;
 }
 
-@media  screen and (min-width: 640px) {
+@media screen and (min-width: 640px) {
   .grid {
     grid-template-columns: 1fr 1fr;
 
   }
 }
 
-@media  screen and (min-width: 1024px) {
+@media screen and (min-width: 1024px) {
   .grid {
     grid-template-columns: repeat(4, 1fr);
 
