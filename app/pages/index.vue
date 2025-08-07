@@ -14,9 +14,8 @@ function onSearch(e: Event) {
 </script>
 
 <template>
-  <h2> The list: </h2>
   <input type="search"  name="search" @search="onSearch" placeholder="Search checklists" />
-  <div class="grid">
+  <div class="grid block">
     <CChecklistCard v-for="item in result" :key="item.id" :stem="item.stem" :title="item.title"
       :description="item.description" />
   </div>

@@ -39,22 +39,13 @@ function uncheckAll() {
                         @change="(e: Event) => onUpdate(item.id, e)" class="checkbox-input" />
                     <label :for="item.id">{{ item.title }}</label>
                 </div>
-                <pre v-if="item.content_text" class="item-content">{{ item.content_text }}</pre>
+                <pre v-if="item.content_text" class="secondary item-content">{{ item.content_text }}</pre>
             </div>
         </div>
     </div>
 </template>
 
 <style scoped>
-.checklist {
-    color: black;
-    padding: 16px;
-    border-radius: 8px;
-    background-color: white;
-    box-shadow: 1px 1px 1px 1px #0d164c;
-    font-family: sans-serif;
-}
-
 .title {
     margin: 0px 0px 16px;
     font-size: 18px;
@@ -78,7 +69,6 @@ function uncheckAll() {
     font-family: sans-serif;
     line-height: 18px;
     margin: 8px 0px 0px 28px;
-    color: gray;
     max-width: 100%;
     white-space: pre-wrap;
     overflow-x: scroll;

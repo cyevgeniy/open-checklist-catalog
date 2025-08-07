@@ -1,5 +1,6 @@
 body {
     font-family: sans-serif;
+    color: #101720;
 }
 
 button {
@@ -16,4 +17,12 @@ input[type='search'] {
     border: 1px solid gray;
     padding: 8px;
     font-size: 16px;
+}
+
+.secondary {
+    opacity: 0.7;
+}
+
+.block {
+    margin-top: 24px;
 }

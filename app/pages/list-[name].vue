@@ -17,7 +17,7 @@ const { data: list } = await useAsyncData(name, () => {
     <template v-if="list">
       <h1 class="title"> {{ list.title }}</h1>
       <p v-if="list.description">{{ list.description }}</p>
-      <CChecklist :checklist="list as Checklist" />
+      <CChecklist :checklist="list as Checklist" class="block"/>
     </template>
   </div>
 </template>
