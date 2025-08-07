@@ -14,7 +14,11 @@ const { data: list } = await useAsyncData(name, () => {
 
 <template>
   <div class="container">
-    <CChecklist :checklist="list as Checklist" />
+    <template v-if="list">
+      <h1 class="title"> {{ list.title }}</h1>
+      <p v-if="list.description">{{ list.description }}</p>
+      <CChecklist :checklist="list as Checklist" />
+    </template>
   </div>
 </template>
 
@@ -25,7 +29,11 @@ const { data: list } = await useAsyncData(name, () => {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100vh;
-  padding: 24px 0px;
+  padding: 24px 8px;
+}
+
+.title {
+  font-size: 24px;
+  margin: 0px;
 }
 </style>

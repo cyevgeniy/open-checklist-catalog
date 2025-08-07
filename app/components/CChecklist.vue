@@ -31,8 +31,6 @@ function uncheckAll() {
 </script>
 <template>
     <div class="checklist">
-        <h2 class="title"> {{ checklist.title }} </h2>
-        <p> {{ checklist.description }} </p>
         <button @click="uncheckAll">Uncheck all</button>
         <div class="checkbox-list">
             <div v-for="item in checklist.items" :key="item.id" class="check-item">
@@ -72,14 +70,18 @@ function uncheckAll() {
     width: 16px;
     height: 16px;
     margin: 0px;
+    flex-shrink: 0;
 }
 
 .item-content {
     font-size: 14px;
+    font-family: sans-serif;
+    line-height: 18px;
     margin: 8px 0px 0px 28px;
     color: gray;
     max-width: 100%;
     white-space: pre-wrap;
+    overflow-x: scroll;
 }
 
 .checkbox-list {

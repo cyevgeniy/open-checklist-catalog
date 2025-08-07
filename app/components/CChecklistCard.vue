@@ -26,6 +26,8 @@ const routeName = computed(() => `list-${props.stem}`)
     padding: 8px;
     font-family: sans-serif;
     box-shadow: 1px 1px 1px 1px black;
+    overflow: hidden;
+    min-height: 100px;
 }
 
 .card:hover {
@@ -34,6 +36,11 @@ const routeName = computed(() => `list-${props.stem}`)
 
 .card h2 {
     margin: 0px;
+    font-size: 18px;
+}
+
+.card p {
+    margin: 12px 0px 0px;
 }
 
 .card:visited {
