@@ -10,8 +10,10 @@ const routeName = computed(() => `list-${props.stem}`)
 
 <template>
     <RouterLink class="card" :to="routeName">
-        <h2> {{ title }}</h2>
-        <p v-if="description" class="secondary">{{ description}}</p>
+        <div class="card-content">
+            <h2> {{ title }}</h2>
+            <p v-if="description" class="secondary">{{ description}}</p>
+        </div>
     </RouterLink>
 </template>
 
@@ -27,10 +29,15 @@ const routeName = computed(() => `list-${props.stem}`)
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     overflow: hidden;
     min-height: 100px;
+    max-height: 150px;
 }
 
 .card:hover {
     background: rgba(221, 219, 230, 0.3);
+}
+
+.card-content {
+    overflow: hidden;
 }
 
 .card h2 {
