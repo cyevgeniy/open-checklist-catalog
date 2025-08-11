@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const { data } = await useAsyncData('all', () => {
-  return queryCollection('lists').all()
+  return queryCollection('lists').order('created_at', 'DESC').all()
 })
 
 const query = ref('')
