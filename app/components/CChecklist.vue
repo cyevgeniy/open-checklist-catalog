@@ -10,6 +10,7 @@ const {
     state,
     setValue,
     loadState,
+    uncheckAll,
 } = useChecklist(toRef(props.checklist))
 
 onMounted(() => {
@@ -20,12 +21,6 @@ function onUpdate(id: string, e: Event) {
     const checked = (e.target as HTMLInputElement).checked
 
     setValue(id, checked)
-}
-
-function uncheckAll() {
-    props.checklist.items.forEach(item => {
-        setValue(item.id, false)
-    })
 }
 
 </script>

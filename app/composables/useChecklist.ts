@@ -50,6 +50,12 @@ export function useChecklist(list: Ref<Checklist>) {
             storage?.removeItem(id)
     }
 
+    function uncheckAll() {
+        for (const key of state.value.keys()) {
+            setValue(key, false)
+        }
+    }
+
     function loadState() {
         list.value.items.forEach(item => {
             const value = storage?.getItem(item.id)
@@ -61,6 +67,7 @@ export function useChecklist(list: Ref<Checklist>) {
 
     return {
         setValue,
+        uncheckAll,
         loadState,
         state,
     }
