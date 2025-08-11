@@ -39,6 +39,33 @@ function createStorage() {
 export function useChecklist(list: Ref<Checklist>) {
     const state = ref<Map<string, boolean>>(new Map())
 
+    const blockingIndexes = computed(() => {
+        const res: number[] = []
+
+        for (let i=0; i < list.value.items.length; ++i) {
+            if (list.value.items[i]?.blocking)
+                res.push(i)
+        }
+
+        return res
+    })
+
+    const firstBlocking = computed(() => {
+        for (const index of blockingIndexes.value) {
+            
+            const item = list.value.items[index]
+
+            if (item?.blocking && !state.value.get(item.id))
+                return index
+        }
+
+        return -1
+    })
+
+    function isBlocked(index: number) {
+        return firstBlocking.value !== -1 && firstBlocking.value < index
+    }
+
     const storage = createStorage()
 
     function setValue(id: string, value: boolean) {
@@ -69,6 +96,7 @@ export function useChecklist(list: Ref<Checklist>) {
         setValue,
         uncheckAll,
         loadState,
+        isBlocked,
         state,
     }
 }

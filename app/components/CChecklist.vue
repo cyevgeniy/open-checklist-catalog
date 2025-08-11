@@ -11,6 +11,7 @@ const {
     setValue,
     loadState,
     uncheckAll,
+    isBlocked,
 } = useChecklist(toRef(props.checklist))
 
 onMounted(() => {
@@ -28,9 +29,9 @@ function onUpdate(id: string, e: Event) {
     <div class="checklist">
         <button @click="uncheckAll">Uncheck all</button>
         <div class="checkbox-list">
-            <div v-for="item in checklist.items" :key="item.id" class="check-item">
+            <div v-for="(item, index) in checklist.items" :key="item.id" class="check-item">
                 <div class="checkbox">
-                    <input :id="item.id" type="checkbox" :checked="state.get(item.id)"
+                    <input :id="item.id" type="checkbox" :checked="state.get(item.id)" :disabled="isBlocked(index)"
                         @change="(e: Event) => onUpdate(item.id, e)" class="checkbox-input" />
                     <label :for="item.id">{{ item.title }}</label>
                 </div>
