@@ -22,7 +22,6 @@ const routeName = computed(() => `list-${props.stem}`)
     color: black;
     display: flex;
     flex-direction: column;
-    gap: 4px;
     padding: 8px;
     font-family: sans-serif;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
@@ -37,10 +36,6 @@ const routeName = computed(() => `list-${props.stem}`)
 .card h2 {
     margin: 0px;
     font-size: 18px;
-}
-
-.card p {
-    margin: 12px 0px 0px;
 }
 
 .card:visited {

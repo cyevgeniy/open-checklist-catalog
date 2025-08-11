@@ -6,6 +6,7 @@ const { data } = await useAsyncData('all', () => {
 const query = ref('')
 
 const result = computed(() => query.value ? data.value?.filter(item => item.title.toLowerCase().indexOf(query.value.toLowerCase())!== -1) : data.value)
+const isEmpty = computed(() => (result.value?.length ?? 0) === 0)
 
 function onSearch(e: Event) {
   const text = (e.target as HTMLInputElement).value
@@ -14,14 +15,23 @@ function onSearch(e: Event) {
 </script>
 
 <template>
-  <input type="search"  name="search" @search="onSearch" placeholder="Search checklists" />
-  <div class="grid block">
+  <div class="block search-container">
+    <h2 class="no-top-margin"> Checklists </h2>
+    <input type="search"  name="search" @search="onSearch" placeholder="Search for checklists" />
+  </div>
+  <CNoChecklists v-if="isEmpty" class="block" />
+  <div v-else class="grid block">
     <CChecklistCard v-for="item in result" :key="item.id" :stem="item.stem" :title="item.title"
       :description="item.description" />
   </div>
 </template>
 
 <style scoped>
+.search-container {
+  display: flex;
+  flex-direction: column;
+}
+
 .grid {
   grid-row-gap: 16px;
   grid-column-gap: 16px;

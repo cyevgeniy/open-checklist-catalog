@@ -74,6 +74,6 @@ function onUpdate(id: string, e: Event) {
     margin-top: 16px;
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 16px;
 }
 </style>

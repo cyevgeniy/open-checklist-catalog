@@ -1,12 +1,29 @@
+:root {
+    --step-vertical: 12px;
+    --color-black: #101720;
+    --color-violet: blueviolet;
+    --color-gray: #e8e8e8;
+    --color-lightest-gray: #99a3ae29;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+}
+
 body {
     font-family: sans-serif;
-    color: #101720;
+    color: var(--color-black);
 }
 
 button {
     padding: 4px 8px;
     border-radius: 4px;
-    background-color: blueviolet;
+    background-color: var(--color-violet);
     color: white;
     font-size: 16px;
     border: 0px;
@@ -14,9 +31,14 @@ button {
 
 input[type='search'] {
     border-radius: 4px;
-    border: 1px solid gray;
+    border: 1px solid var(--color-lightest-gray);
     padding: 8px;
     font-size: 16px;
+}
+
+input[type='search']::placeholder {
+    color: var(--color-black);
+    opacity: 0.4;
 }
 
 .secondary {
@@ -25,4 +47,12 @@ input[type='search'] {
 
 .block {
     margin-top: 24px;
+}
+
+h1,h2,h3,h4, p, ul {
+    margin: var(--step-vertical) 0;
+}
+
+.no-top-margin {
+    margin-top: 0px;
 }
