@@ -1,9 +1,14 @@
+<script setup lang="ts">
+import { config } from '~/config'
+
+</script>
+
 <template>
     <footer>
         <div class="footer-content">
             <div class="link-list">
-                <a href="https://github.com/cyevgeniy" target="_blank" class="secondary">Github</a>
-                <a href="https://github.com/cyevgeniy" target="_blank" class="secondary">What is is?</a>
+                <a :href="config.githubUrl" target="_blank" class="secondary">Github</a>
+                <a href="https://github.com/cyevgeniy" target="_blank" class="secondary">What is it?</a>
             </div>
         </div>
     </footer>

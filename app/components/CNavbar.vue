@@ -1,11 +1,15 @@
+<script setup lang="ts">
+import { config } from '~/config'
+</script>
+
 <template>
     <nav>
         <NuxtLink to="/" class="logo-link icon-link">
             <Icon name="icon-park-twotone:check-one" :size="24" />
-            Open Checklists
+            {{ config.title }}
         </NuxtLink>
         <div class="end">
-            <NuxtLink to="/" class="text onlyicon-link  ">
+            <NuxtLink v-if="config.githubUrl" :to="config.githubUrl" target="_blank" class="text onlyicon-link  ">
                 <Icon name="uil:github" :size="20" />
             </NuxtLink>
         </div>
@@ -32,11 +36,7 @@ nav {
 }
 
 .logo-link {
-    opacity: 0.6;
-}
-
-.logo-link:hover{
-    opacity: 0.8
+    opacity: 0.8;
 }
 
 .icon-link {
