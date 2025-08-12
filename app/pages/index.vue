@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { config } from '~/config'
+
 const { data } = await useAsyncData('all', () => {
   return queryCollection('lists').order('created_at', 'DESC').all()
 })
@@ -12,6 +14,10 @@ function onSearch(e: Event) {
   const text = (e.target as HTMLInputElement).value
   query.value = text 
 }
+
+useHead({
+  title: config.title
+})
 </script>
 
 <template>
