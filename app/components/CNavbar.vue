@@ -5,7 +5,7 @@
             Open Checklists
         </NuxtLink>
         <div class="end">
-            <NuxtLink to="/" class="icon-link">
+            <NuxtLink to="/" class="text onlyicon-link  ">
                 <Icon name="uil:github" :size="20" />
             </NuxtLink>
         </div>
@@ -17,8 +17,12 @@ nav {
     display: flex;
     gap: 24px;
     align-items: center;
-    padding: 16px 0;
+    padding: 0;
     border-bottom: 1px solid var(--color-lightest-gray);
+}
+
+.onlyicon-link, .logo-link {
+    padding: 16px 0;
 }
 
 .end {
@@ -28,7 +32,7 @@ nav {
 }
 
 .logo-link {
-    opacity: 0.5;
+    opacity: 0.6;
 }
 
 .logo-link:hover{
@@ -41,5 +45,11 @@ nav {
     align-items: center;
     text-decoration: none;
     line-height: 1;
+}
+
+.onlyicon-link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 </style>

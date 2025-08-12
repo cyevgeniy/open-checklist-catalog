@@ -56,3 +56,11 @@ h1,h2,h3,h4, p, ul {
 .no-top-margin {
     margin-top: 0px;
 }
+
+.text {
+    color: var(--color-black);
+}
+
+a {
+    color: var(--color-violet);
+}
