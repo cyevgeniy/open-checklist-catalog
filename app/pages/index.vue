@@ -17,7 +17,7 @@ function onSearch(e: Event) {
 <template>
   <div class="block search-container">
     <h2 class="no-top-margin"> Checklists </h2>
-    <input type="search"  name="search" @search="onSearch" placeholder="Search for checklists" />
+    <input type="search"  name="search" @change="onSearch" placeholder="Search for checklists" />
   </div>
   <CNoChecklists v-if="isEmpty" class="block" />
   <div v-else class="grid block">

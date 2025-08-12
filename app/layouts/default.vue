@@ -1,5 +1,7 @@
 <template>
     <div class="page-container">
+        <CNavbar />
+
         <div class="content">
             <slot />
         </div>
@@ -9,6 +11,7 @@
 
 <style scoped>
 .page-container {
+    
     max-width: 1024px;
     margin: 0 auto;
     display: flex;
@@ -20,7 +23,7 @@
     padding-bottom: 24px;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1024px) {
     .page-container {
         max-width: none;
         padding: 0 16px;
