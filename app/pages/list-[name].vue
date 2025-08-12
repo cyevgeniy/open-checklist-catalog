@@ -17,6 +17,10 @@ const {
     isBlocked,
 } = useChecklist(list)
 
+useHead({
+  title: list.value?.title
+})
+
 function onUpdate(id: string, e: Event) {
     const checked = (e.target as HTMLInputElement).checked
 
