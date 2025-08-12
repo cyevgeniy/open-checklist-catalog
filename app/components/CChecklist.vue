@@ -1,38 +1,16 @@
 <script setup lang="ts">
-import { onMounted } from 'vue';
-import type { Checklist } from '~/types/checklists';
 
-const props = defineProps<{
-    checklist: Checklist
-}>()
-
-const {
-    state,
-    setValue,
-    loadState,
-    uncheckAll,
-    isBlocked,
-} = useChecklist(toRef(props.checklist))
-
-onMounted(() => {
-    loadState()
-})
-
-function onUpdate(id: string, e: Event) {
-    const checked = (e.target as HTMLInputElement).checked
-
-    setValue(id, checked)
-}
+const api = inject(listApiKey)
 
 </script>
 <template>
-    <div class="checklist">
-        <button @click="uncheckAll">Uncheck all</button>
+    <div class="checklist" v-if="api">
+        <!-- <button @click="uncheckAll">Uncheck all</button> -->
         <div class="checkbox-list">
-            <div v-for="(item, index) in checklist.items" :key="item.id" class="check-item">
+            <div v-for="(item, index) in api.list.value?.items" :key="item.id" class="check-item">
                 <div class="checkbox">
-                    <input :id="item.id" type="checkbox" :checked="state.get(item.id)" :disabled="isBlocked(index)"
-                        @change="(e: Event) => onUpdate(item.id, e)" class="checkbox-input" />
+                    <input :id="item.id" type="checkbox" :checked="api?.state.value.get(item.id)" :disabled="api?.isBlocked(index)"
+                        @change="(e: Event) => api?.onUpdate(item.id, e)" class="checkbox-input" />
                     <label :for="item.id">{{ item.title }}</label>
                 </div>
                 <pre v-if="item.content_text" class="secondary item-content">{{ item.content_text }}</pre>

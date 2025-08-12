@@ -36,11 +36,14 @@ function createStorage() {
         undefined
 }
 
-export function useChecklist(list: Ref<Checklist>) {
+export function useChecklist(list: Ref<Checklist | null | undefined>) {
     const state = ref<Map<string, boolean>>(new Map())
 
     const blockingIndexes = computed(() => {
         const res: number[] = []
+
+        if (!list.value)
+            return res
 
         for (let i=0; i < list.value.items.length; ++i) {
             if (list.value.items[i]?.blocking)
@@ -51,6 +54,9 @@ export function useChecklist(list: Ref<Checklist>) {
     })
 
     const firstBlocking = computed(() => {
+        if (!list.value)
+            return -1
+
         for (const index of blockingIndexes.value) {
             
             const item = list.value.items[index]
@@ -84,6 +90,9 @@ export function useChecklist(list: Ref<Checklist>) {
     }
 
     function loadState() {
+        if (!list.value)
+            return
+
         list.value.items.forEach(item => {
             const value = storage?.getItem(item.id)
 
