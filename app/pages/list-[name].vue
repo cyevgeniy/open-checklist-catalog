@@ -80,7 +80,6 @@ onMounted(() => {
     margin: 8px 0px 0px 28px;
     max-width: 100%;
     white-space: pre-wrap;
-    overflow-x: scroll;
 }
 
 .checkbox-list {
