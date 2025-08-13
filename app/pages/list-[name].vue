@@ -39,7 +39,6 @@ onMounted(() => {
       </div>
       <p v-if="list.description" class="no-top-margin">{{ list.description }}</p>
       <div class="checklist" v-if="list">
-        <!-- <button @click="uncheckAll">Uncheck all</button> -->
         <div class="checkbox-list">
             <div v-for="(item, index) in list.items" :key="item.id" class="check-item">
                 <div class="checkbox">
