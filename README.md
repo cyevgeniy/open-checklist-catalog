@@ -1,75 +1,17 @@
-# Nuxt Minimal Starter
+# Checklists catalog
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+A web interface for working with open-checklists.
 
-## Setup
+## Running locally
 
-Make sure to install dependencies:
+1. `npm i`
+2. `npm run dev`
 
-```bash
-# npm
-npm install
+## How it works
 
-# pnpm
-pnpm install
+Checklists catalog uses [Nuxt Content](https://content.nuxt.com/) for 
+working with checklists.
 
-# yarn
-yarn install
+Just create a `.json` file in the `content` directory.
 
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+To create an open-checklists json file you can use [the constructor](https://github.com/cyevgeniy/open-checklist-constructor).
