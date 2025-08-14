@@ -4,6 +4,7 @@
     --color-violet: #7287fd;
     --color-gray: #e8e8e8;
     --color-lightest-gray: #99a3ae29;
+    --color-primary: rgb(46, 46, 198);
 }
 
 * {
@@ -23,7 +24,7 @@ body {
 button {
     padding: 4px 8px;
     border-radius: 4px;
-    background-color: var(--color-violet);
+    background-color: var(--color-primary);
     color: white;
     font-size: 16px;
     border: 0px;

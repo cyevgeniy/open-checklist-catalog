@@ -1,3 +1,8 @@
+<script setup lang="ts">
+import { config } from '~/config';
+
+</script>
+
 <template>
     <div class="page-container">
         <CNavbar />
@@ -5,7 +10,7 @@
         <div class="content">
             <slot />
         </div>
-        <CFooter />
+        <CFooter v-if="config.footer" />
     </div>
 </template>
 

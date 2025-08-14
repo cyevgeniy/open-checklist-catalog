@@ -8,6 +8,15 @@ import { config } from '~/config'
             <Icon name="icon-park-twotone:check-one" :size="24" />
             {{ config.title }}
         </NuxtLink>
+        <a
+            v-for="(link, index) in config.nav ?? []"
+            :key="index"
+            :href="link.link"
+            :target="link.target"
+            class="nav-link"
+        >
+            {{ link.text }}
+        </a>
         <div class="end">
             <NuxtLink v-if="config.githubUrl" :to="config.githubUrl" target="_blank" class="text onlyicon-link  ">
                 <Icon name="uil:github" :size="20" />
@@ -25,7 +34,7 @@ nav {
     border-bottom: 1px solid var(--color-lightest-gray);
 }
 
-.onlyicon-link, .logo-link {
+.onlyicon-link, .logo-link, .nav-link {
     padding: 16px 0;
 }
 
@@ -37,6 +46,7 @@ nav {
 
 .logo-link {
     opacity: 0.8;
+    font-weight: 600;
 }
 
 .icon-link {
@@ -45,6 +55,15 @@ nav {
     align-items: center;
     text-decoration: none;
     line-height: 1;
+}
+
+.nav-link {
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    color: var(--color-primary);
+
 }
 
 .onlyicon-link {
