@@ -27,7 +27,7 @@ useHead({
   <CNoChecklists v-if="isEmpty" class="block" />
   <div v-else class="grid block">
     <CChecklistCard v-for="item in result" :key="item.id" :stem="item.stem" :title="item.title"
-      :description="item.description" />
+      :description="item.description" :icon="item._icon" />
   </div>
 </template>
 

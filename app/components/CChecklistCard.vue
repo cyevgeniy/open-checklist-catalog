@@ -2,17 +2,24 @@
 const props = defineProps<{
     title: string
     description?: string
+    icon?: string
     stem: string
 }>()
 
 const routeName = computed(() => `list-${props.stem}`)
+const _description = computed(() => props.description?.split('\n')[0])
 </script>
 
 <template>
     <RouterLink class="card" :to="routeName">
         <div class="card-content">
-            <h2> {{ title }}</h2>
-            <p v-if="description" class="secondary">{{ description}}</p>
+            <div class="card-flex">
+                <Icon v-if="icon" :name="icon" :size="24" class="card-icon"/>
+                <div class="card-info">
+                    <h2> {{ title }}</h2>
+                    <p v-if="_description" class="secondary">{{ _description}}</p>
+                </div>
+            </div>
         </div>
     </RouterLink>
 </template>
@@ -38,6 +45,18 @@ const routeName = computed(() => `list-${props.stem}`)
 
 .card-content {
     overflow: hidden;
+    height: 100%;
+}
+
+.card-icon {
+    flex-shrink: 0;
+}
+
+.card-flex {
+    display: flex;
+    gap: 4px;
+    align-items: start;
+    height: 100%;
 }
 
 .card h2 {

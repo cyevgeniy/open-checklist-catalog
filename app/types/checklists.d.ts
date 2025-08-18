@@ -16,6 +16,7 @@ export interface Item {
 	content_text?: string
 	blocking?: boolean
 	attachments?: Attachment[]
+	_icon?: string
 }
 
 export interface Checklist {

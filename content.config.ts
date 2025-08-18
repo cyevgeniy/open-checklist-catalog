@@ -8,6 +8,7 @@ export default defineContentConfig({
       schema: z.object({
         title: z.string(),
         description: z.string(),
+        _icon: z.string(),
         created_at: z.string().optional(),
         items: z.array(z.object({
             id: z.string(),

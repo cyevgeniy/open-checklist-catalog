@@ -34,7 +34,7 @@ export const config = defineConfig({
     title: 'Open Checklists',
     nav: [
         {text: 'What is it?', link: 'https://github.com', target: "_blank"},
-        {text: 'Want my own!', link: '/list-form'}
+        {text: 'Want my own!', link: '/list-own'}
     ],
     footer: {
         text: 'Open Checklists, 2025'
