@@ -6,8 +6,8 @@ export default defineContentConfig({
       type: 'data',
       source: '**.json',
       schema: z.object({
-        title: z.string(),
-        description: z.string(),
+        title: z.string().optional(),
+        description: z.string().optional(),
         _icon: z.string(),
         created_at: z.string().optional(),
         items: z.array(z.object({
