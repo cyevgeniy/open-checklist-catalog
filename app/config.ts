@@ -1,10 +1,29 @@
 interface NavLink {
+    /**
+     * Link text
+     * @example 'My projects'
+     */
     text: string
+
+    /**
+     * URL of the link
+     * @example 'https://example.com'
+     * @example '/list-own'
+     */
     link: string
+
+    /**
+     * target attribute
+     * @example '_blank'
+     */
     target?: string
 }
 
 interface Footer {
+    /**
+     * Text to display in the footer
+     * @example 'Made with Nuxt by John Doe'
+     */
     text?: string
 }
 
