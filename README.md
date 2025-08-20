@@ -112,3 +112,9 @@ You can add an icon to the checklist card by extending your checklists with
 ```
 
 ![card with icon example](screenshots/card.png)
+
+## Misc
+
+Icon for the logo: `icon-park-outline:check-one`.
+
+Color: #12a627;
