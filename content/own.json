@@ -1,0 +1,24 @@
+{
+  "title": "Create own checklists catalog",
+  "description": "",
+  "created_at": "2025-08-15",
+  "_icon": "carbon:carbon",
+  "items": [
+    {
+      "id": "W1DtqR1FW7v9HlPYgWEbX",
+      "title": "Clone checklists catalog repository",
+      "content_text": "https://github.com/cyevgeniy/open-checklist-catalog",
+      "blocking": true
+    },
+    {
+      "id": "P6-bBIkUtlLd23c87_Vys",
+      "title": "Add checklists in the \"content\" directory",
+      "content_text": "For easy checklists creation, use open checklist constructor:\n\nhttps://github.com/cyevgeniy/open-checklist-constructor"
+    },
+    {
+      "id": "Iok_oAgu8NSWpc6vTkG3o",
+      "title": "Update settings",
+      "content_text": "Update settings in config.ts file according to your needs"
+    }
+  ]
+}

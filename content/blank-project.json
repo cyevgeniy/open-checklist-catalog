@@ -1,0 +1,27 @@
+{
+  "title": "Blank project",
+  "description": "",
+  "created_at": "2025-08-11",
+  "items": [
+    {
+      "id": "g9KRS53A9Q2QuZw5qwPno",
+      "title": "Add README.md file",
+      "content_text": "Add a readme file. Include these sections:\n\n- Project name\n- How it's different\n- How to build/run it locally"
+    },
+    {
+      "id": "C0sooCI7__GKtivRkvcCz",
+      "title": "Create a logo",
+      "content_text": "Add this logo to the readme"
+    },
+    {
+      "id": "N_-ASixt9CEJTcVEwSTWP",
+      "title": "Github: Add project description",
+      "content_text": ""
+    },
+    {
+      "id": "mOXps4lMNSprckCIoeaLt",
+      "title": "Github: Add tags",
+      "content_text": ""
+    }
+  ]
+}

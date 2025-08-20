@@ -49,10 +49,10 @@ function defineConfig(config: Config): Config {
 }
 
 export const config = defineConfig({
-    githubUrl: 'https://github.com/cyevgeniy',
+    githubUrl: 'https://github.com/cyevgeniy/open-checklist-catalog',
     title: 'Open Checklists',
     nav: [
-        {text: 'What is it?', link: 'https://github.com', target: "_blank"},
+        // {text: 'What is it?', link: 'https://github.com', target: "_blank"},
         {text: 'Want my own!', link: '/list-own'}
     ],
     footer: {

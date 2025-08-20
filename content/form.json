@@ -1,22 +1,63 @@
 {
-  "title": "How to create a good form",
-  "description": "Based on Evil Martians blogpost",
-  "created_at": "2025-08-06",
+  "title": "Signup and login forms",
+  "description": "Based on EvilMartians' article\n\nSee https://evilmartians.com/chronicles/html-best-practices-for-login-and-signup-forms",
+  "created_at": "2025-08-20",
+  "_icon": "fluent:form-28-regular",
   "items": [
     {
-      "id": "hccfwtLstEBz2oFW0mRvK",
-      "title": "Set autocomplete",
-      "content_text": "Add autocomplete flags to all inputs"
+      "id": "RsGRFZ7813fc1x7jsxs6I",
+      "title": "Set 'autocomplete' ",
+      "content_text": "- It allows password managers to distinguish a login form (current-password) from a sign-up form (new-password)\n- Don’t set autocomplete=\"off\" if you don’t know what are you doing!"
     },
     {
-      "id": "6wCvkTB2Na2BX_NWYssgI",
-      "title": "Block form during submitting",
-      "content_text": "When a form is being submitted, it's okay to make it work like this.\n\nDon't forget to return to the base values."
+      "id": "Y5xGVOrgJFV6KRZp58C8p",
+      "title": "Set type=\"email\"",
+      "content_text": ""
     },
     {
-      "id": "dtwsOxbWHAoldLRA81D4x",
-      "title": "Set aria tags",
-      "content_text": "Set aria-errormessage and aria-invalid tags."
+      "id": "fIm-vLgoWpsbNM7nhIEaA",
+      "title": "All clickables should use <button> or <a>, not <div> or <span>",
+      "content_text": ""
+    },
+    {
+      "id": "9zJQb4b_CfRqG4GILyu7X",
+      "title": "Wrap the fields and submit <button> within <form> tags.",
+      "content_text": "Form submission using Enter only works if the fields are inside <form> tags and there is a single submit button"
+    },
+    {
+      "id": "FzNhxJE2iPzU0p6PUhG5T",
+      "title": "Avoid using placeholder as a <label>",
+      "content_text": "The placeholder attribute was created to show an example of a potential input, not to describe that input. Moreover, placeholder values will be hidden while users are entering the data, and they also often have contrast issues."
+    },
+    {
+      "id": "jt4kVN4zEMlwczLtAvpdJ",
+      "title": "Wrap checkbox inputs within <label> tags",
+      "content_text": "- <input type=\"checkbox\"> I agree with the privacy policy\n+ <label>\n+   <input type=\"checkbox\"> I agree with the privacy policy\n+ </label>"
+    },
+    {
+      "id": "VsfebseiHe9w62kb-Wk8l",
+      "title": "Add a visible :focus state",
+      "content_text": "When it comes to forms, in general, every user will make use of the keyboard. So, we need to think about how our UIs are accessible from the keyboard."
+    },
+    {
+      "id": "NZKHkqVf1hjz6NOZFotYO",
+      "title": "Mark invalid fields for screen-readers",
+      "content_text": "<input type=\"email\" autocomplete=\"username\"\n-         class=\"invalid\">\n+         required aria-invalid=\"true\" aria-errormessage=\"email-error\">\n  <div id=\"email-error\">Enter a valid email address</div>\n\n\"aria-invalid\" and \"aria-errormessage\" display validation errors for screen-reader users"
+    },
+    {
+      "id": "t-2p2HwyUN35P2P2F0sDU",
+      "title": "Prevent validation in the middle of user input",
+      "content_text": "We don’t want to distract or confuse users with error animations while they’re inputting data into a form, so don’t display a Not valid email error before a user hasn’t finished their input.\n\nAs a solution, use change instead of keyup for validation once the user has finished their input (by moving to another control or by submitting the form). Of course, we can use still input/keyup, but only to hide errors during input."
+    },
+    {
+      "id": "JM60_y2Wr4gyBb_AzeW0I",
+      "title": "Prevent forms from being sent twice",
+      "content_text": "User can often accidentally double-click instead of a single-click. So, to prevent showing some server error, it’s better to disable the button upon form submission."
+    },
+    {
+      "id": "-_wcyxP-7UvRu1tbG0Mor",
+      "title": "With AJAX, think about network latency and server/network errors",
+      "content_text": "form.addEventListener('submit', async () => {\n-   await fetch(…)\n+   try {\n+     showLoader()\n+     await fetch(…)\n+   } catch (e) {\n+     showError(e)\n+   } finally {\n+     hideLoader()\n+   }\n  })"
     }
   ]
 }
