@@ -1,5 +1,7 @@
 <template>
     <div>
-        No checklists were created. Checkout the <a href="" target="_blank">docs</a> to see how to do that.
+        <slot>
+            No checklists were found. Checkout the <a href="/list-own">instructions</a> to see how to add one.
+        </slot>
     </div>
 </template>

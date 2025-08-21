@@ -8,8 +8,9 @@ export const config = defineConfig({
     githubUrl: 'https://github.com/cyevgeniy/open-checklist-catalog',
     title: 'Open Checklists',
     nav: [
-        // {text: 'What is it?', link: 'https://github.com', target: "_blank"},
-        {text: 'Want my own!', link: '/list-own'}
+        {text: 'About format', link: 'https://github.com/cyevgeniy/chkl?tab=readme-ov-file#open-checklists', target: "_blank"},
+        {text: 'Want my own!', link: '/list-own'},
+        
     ],
     footer: {
         text: 'Open Checklists, 2025'
