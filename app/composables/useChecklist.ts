@@ -1,4 +1,4 @@
-import type { Checklist } from '~/types/checklists'
+import type { Checklist } from 'open-checklists'
 
 function isHasLocalStorage() {
     try {
