@@ -6,7 +6,7 @@ const props = defineProps<{
     stem: string
 }>()
 
-const routeName = computed(() => `list-${props.stem}`)
+const routeName = computed(() => `/list-${props.stem}`)
 const _description = computed(() => props.description?.split('\n')[0])
 </script>
 

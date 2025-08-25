@@ -33,7 +33,8 @@ onMounted(() => {
 <template>
   <div class="list block">
     <template v-if="list">
-      <div class="list-header">
+      <CTagsList v-if="list._tags" :tags="list._tags" />
+      <div class="list-header block">
         <h1 class="title no-top-margin"> {{ list.title }}</h1>
         <button @click="uncheckAll">Uncheck all</button>
       </div>

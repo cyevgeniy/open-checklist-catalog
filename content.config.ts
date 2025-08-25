@@ -6,6 +6,7 @@ const schema: toZod<Checklist> = z.object({
   title: z.string().optional(),
   description: z.string().optional(),
   _icon: z.string(),
+  _tags: z.array(z.string()).optional(),
   created_at: z.string().optional(),
   authors: z.array(z.object({
     name: z.string(),
