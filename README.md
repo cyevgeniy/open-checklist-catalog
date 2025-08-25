@@ -113,6 +113,20 @@ You can add an icon to the checklist card by extending your checklists with
 
 ![card with icon example](screenshots/card.png)
 
+### tags
+
+You can add a tags list to each checklist with the `_tags` field:
+
+```json
+{
+  "title": "Signup and login forms",
+  "_tags": ["form", "example"],
+  "items": [
+    ...
+  ]
+}
+```
+
 ## Misc
 
 Icon for the logo: `icon-park-outline:check-one`.
