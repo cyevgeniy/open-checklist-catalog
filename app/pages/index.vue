@@ -34,7 +34,7 @@ useHead({
 
 <template>
   <div class="block search-container">
-    <input type="search" name="search" @change="onSearch" placeholder="Search for checklists" />
+    <input type="search" name="search" @change="onSearch" placeholder="Press &quot;/&quot; for search" aria-keyshortcuts="/" />
   </div>
   <CNoChecklists v-if="isEmpty" class="block" />
   <CGrid v-else class="block">
