@@ -14,7 +14,7 @@ import { config } from '~/config'
 <style scoped>
 footer {
     padding: 24px;
-    border-top: 1px solid #99a3ae29;
+    border-top: 1px solid var(--color-lightest-gray);
     margin-top: auto;
     display: flex;
     align-items: center;
