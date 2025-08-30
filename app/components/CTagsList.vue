@@ -14,7 +14,6 @@ defineProps<{
 .tagslist {
     display: flex;
     gap: 8px;
-    overflow-x: scroll;
     flex-wrap: wrap;
 }
 </style>
