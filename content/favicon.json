@@ -1,0 +1,22 @@
+{
+  "title": "Favicon checklist",
+  "description": "Based on EvilMartians' article",
+  "created_at": "2025-09-29",
+  "items": [
+    {
+      "id": "hfecidd6plSZSQs3YxvNx",
+      "title": "Add favicon.ico",
+      "content_text": "<link rel=\"icon\" href=\"/favicon.ico\" sizes=\"32x32\">"
+    },
+    {
+      "id": "VnHHi4qB7rYCgk8ChlEkX",
+      "title": "Add SVG icon with a light/dark version",
+      "content_text": "<link rel=\"icon\" href=\"/icon.svg\" type=\"image/svg+xml\">"
+    },
+    {
+      "id": "AGTud1vckS_EO9B4RT7w9",
+      "title": "Add 180×180 PNG image for Apple devices",
+      "content_text": "<link rel=\"apple-touch-icon\" href=\"apple-touch-icon.png\">"
+    }
+  ]
+}
