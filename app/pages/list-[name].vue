@@ -51,6 +51,9 @@ onMounted(() => {
             </div>
         </div>
     </div>
+    <div v-if="list.authors?.length" class="authors">
+      <CAuthor v-for="(author, index) in list.authors" :key="index" :author="author" />
+    </div>
     </template>
   </div>
 </template>
@@ -113,5 +116,12 @@ onMounted(() => {
 
 .list-header > * {
   margin: 0;
+}
+
+.authors {
+  margin-top: 48px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 </style>
