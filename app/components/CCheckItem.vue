@@ -139,6 +139,7 @@ function onKeydown(e: KeyboardEvent) {
 .box {
     width: 32px;
     height: 32px;
+    min-width: 32px;
     border-radius: 8px;
     display: flex;
     align-items: center;
