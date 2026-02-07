@@ -1,45 +1,45 @@
 export interface NavLink {
-    /**
+  /**
      * Link text
      * @example 'My projects'
      */
-    text: string
+  text: string
 
-    /**
+  /**
      * URL of the link
      * @example 'https://example.com'
      * @example '/list-own'
      */
-    link: string
+  link: string
 
-    /**
+  /**
      * target attribute
      * @example '_blank'
      */
-    target?: string
+  target?: string
 }
 
 export interface Footer {
-    /**
+  /**
      * Text to display in the footer
      * @example 'Made with Nuxt by John Doe'
      */
-    text?: string
+  text?: string
 }
 
 export interface Config {
-    /**
+  /**
      * Link to a github repo
      */
-    githubUrl?: string
+  githubUrl?: string
 
-    /**
+  /**
      * The title of the site.
      * Will be shown in the header
      */
-    title: string
+  title: string
 
-    nav?: NavLink[]
+  nav?: NavLink[]
 
-    footer?: Footer
+  footer?: Footer
 }

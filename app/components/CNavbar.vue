@@ -3,26 +3,40 @@ import { config } from '~/config'
 </script>
 
 <template>
-    <nav>
-        <NuxtLink to="/" class="logo-link icon-link">
-            <Icon name="icon-park-twotone:check-one" :size="24" />
-            {{ config.title }}
-        </NuxtLink>
-        <a
-            v-for="(link, index) in config.nav ?? []"
-            :key="index"
-            :href="link.link"
-            :target="link.target"
-            class="nav-link"
-        >
-            {{ link.text }}
-        </a>
-        <div class="end">
-            <NuxtLink v-if="config.githubUrl" :to="config.githubUrl" target="_blank" class="text onlyicon-link  ">
-                <Icon name="uil:github" :size="20" />
-            </NuxtLink>
-        </div>
-    </nav>
+  <nav>
+    <NuxtLink
+      to="/"
+      class="logo-link icon-link"
+    >
+      <Icon
+        name="icon-park-twotone:check-one"
+        :size="24"
+      />
+      {{ config.title }}
+    </NuxtLink>
+    <a
+      v-for="(link, index) in config.nav ?? []"
+      :key="index"
+      :href="link.link"
+      :target="link.target"
+      class="nav-link"
+    >
+      {{ link.text }}
+    </a>
+    <div class="end">
+      <NuxtLink
+        v-if="config.githubUrl"
+        :to="config.githubUrl"
+        target="_blank"
+        class="text onlyicon-link  "
+      >
+        <Icon
+          name="uil:github"
+          :size="20"
+        />
+      </NuxtLink>
+    </div>
+  </nav>
 </template>
 
 <style scoped>

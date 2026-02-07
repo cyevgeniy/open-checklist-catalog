@@ -1,22 +1,21 @@
 <script setup lang="ts">
-import { config } from '~/config';
-
+import { config } from '~/config'
 </script>
 
 <template>
-    <div class="page-container">
-        <CNavbar />
+  <div class="page-container">
+    <CNavbar />
 
-        <div class="content">
-            <slot />
-        </div>
-        <CFooter v-if="config.footer" />
+    <div class="content">
+      <slot />
     </div>
+    <CFooter v-if="config.footer" />
+  </div>
 </template>
 
 <style scoped>
 .page-container {
-    
+
     max-width: 1024px;
     margin: 0 auto;
     display: flex;

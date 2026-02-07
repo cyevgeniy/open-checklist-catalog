@@ -1,14 +1,13 @@
 <script setup lang="ts">
 import { config } from '~/config'
-
 </script>
 
 <template>
-    <footer>
-        <div class="footer-content">
-                {{ config.footer?.text }}
-        </div>
-    </footer>
+  <footer>
+    <div class="footer-content">
+      {{ config.footer?.text }}
+    </div>
+  </footer>
 </template>
 
 <style scoped>

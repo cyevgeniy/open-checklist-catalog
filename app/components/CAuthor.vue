@@ -2,17 +2,31 @@
 import type { Author } from 'open-checklists'
 
 const props = defineProps<{
-    author: Author
+  author: Author
 }>()
 
 const component = computed(() => props.author.url ? 'a' : 'div')
 </script>
 
 <template>
-    <component :is="component" :href="author.url" target="_blank" class="author">
-        <img v-if="author.avatar" :src="author.avatar" decoding="async" /> 
-        <p>{{  author.name }}</p>
-    </component>
+  <component
+    :is="component"
+    :href="author.url"
+    target="_blank"
+    class="author"
+  >
+    <img
+      v-if="author.avatar"
+      :src="author.avatar"
+      decoding="async"
+    >
+    <Icon
+      v-else
+      size="20"
+      name="lucide:user"
+    />
+    <p>{{ author.name }}</p>
+  </component>
 </template>
 
 <style scoped>
@@ -26,19 +40,20 @@ const component = computed(() => props.author.url ? 'a' : 'div')
     gap: 4px;
 }
 
-a.author:hover {
-    text-decoration: underline;
-}
-
 .author > p {
     font-weight: 500;
     font-size: 16px;
+    color: var(--color-slate-600);
+}
+
+.author:hover, .author:hover p {
+  color: var(--color-blue-600);
 }
 
 .author > img {
     border-radius: 9999px;
-    width: 40px;
-    height: 40px;
+    width: 24px;
+    height: 24px;
     flex-shrink: 0;
 }
 </style>

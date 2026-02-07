@@ -1,15 +1,13 @@
 import {
-    hotkeyKeyUX,
-    hotkeyOverrides,
-    startKeyUX
+  hotkeyKeyUX,
+  hotkeyOverrides,
+  startKeyUX,
 } from 'keyux'
 
+export default defineNuxtPlugin((_) => {
+  const overrides = hotkeyOverrides({})
 
-
-export default defineNuxtPlugin(_ => {
-    const overrides = hotkeyOverrides({})
-
-    startKeyUX(window, [
-        hotkeyKeyUX([overrides]),
-    ])
+  startKeyUX(window, [
+    hotkeyKeyUX([overrides]),
+  ])
 })

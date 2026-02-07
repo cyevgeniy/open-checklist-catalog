@@ -1,7 +1,8 @@
 <template>
-    <div class="grid"><slot /></div>
+  <div class="grid">
+    <slot />
+  </div>
 </template>
-
 
 <style scoped>
 .grid {

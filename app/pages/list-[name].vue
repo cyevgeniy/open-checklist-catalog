@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import CCheckItem from '~/components/CCheckItem.vue'
+
 const route = useRoute()
 const name: string = route.params.name as string
 
@@ -8,22 +10,16 @@ const { data: list } = await useAsyncData(name, () => {
 })
 
 const {
-    state,
-    setValue,
-    loadState,
-    uncheckAll,
-    isBlocked,
+  state,
+  setValue,
+  loadState,
+  uncheckAll,
+  isBlocked,
 } = useChecklist(list)
 
 useHead({
-  title: list.value?.title
+  title: list.value?.title,
 })
-
-function onUpdate(id: string, e: Event) {
-    const checked = (e.target as HTMLInputElement).checked
-
-    setValue(id, checked)
-}
 
 onMounted(() => {
   loadState()
@@ -31,59 +27,75 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="list block">
+  <div class="list">
     <template v-if="list">
-      <CTagsList v-if="list._tags" :tags="list._tags" />
-      <div class="list-header block">
-        <h1 class="title no-top-margin"> {{ list.title }}</h1>
-        <button @click="uncheckAll">Uncheck all</button>
+      <CTagsList
+        v-if="list._tags"
+        :tags="list._tags"
+        class="block"
+      />
+      <h1 class="title block">
+        {{ list.title }}
+      </h1>
+
+      <p
+        v-if="list.description"
+        class="description no-top-margin"
+      >
+        {{ list.description }}
+      </p>
+      <div
+        v-if="list.authors?.length"
+        class="authors"
+      >
+        <span>by</span>
+        <template
+          v-for="(author, index) in list.authors"
+          :key="index"
+        >
+          <CAuthor
+            :author="author"
+          />
+          <span v-if="index < list.authors.length - 1">,</span>
+        </template>
       </div>
-      <p v-if="list.description" class="no-top-margin">{{ list.description }}</p>
-      <div class="checklist" v-if="list">
+      <button
+        class="block"
+        @click="uncheckAll"
+      >
+        Uncheck all
+      </button>
+      <div
+        v-if="list"
+        class="checklist"
+      >
         <div class="checkbox-list">
-            <div v-for="(item, index) in list.items" :key="item.id" class="check-item">
-                <div class="checkbox">
-                    <input :id="item.id" type="checkbox" :checked="state.get(item.id)" :disabled="isBlocked(index)"
-                        @change="(e: Event) => onUpdate(item.id, e)" class="checkbox-input" />
-                    <label :for="item.id">{{ item.title }}</label>
-                </div>
-                <pre v-if="item.content_text" class="secondary item-content">{{ item.content_text }}</pre>
-            </div>
+          <div
+            v-for="(item, index) in list.items"
+            :key="item.id"
+            class="check-item"
+          >
+            <CCheckItem
+              :item="item"
+              :checked="state.get(item.id)"
+              :disabled="isBlocked(index)"
+              @change="setValue"
+            />
+          </div>
         </div>
-    </div>
-    <div v-if="list.authors?.length" class="authors">
-      <CAuthor v-for="(author, index) in list.authors" :key="index" :author="author" />
-    </div>
+      </div>
     </template>
   </div>
 </template>
 
 <style scoped>
 .title {
-    margin: 0px 0px 16px;
+    margin-bottom: 8px;
     font-size: 18px;
 }
 
-.checkbox {
-    display: flex;
-    gap: 12px;
-    align-items: center;
-}
-
-.checkbox-input {
-    width: 16px;
-    height: 16px;
-    margin: 0px;
-    flex-shrink: 0;
-}
-
-.item-content {
-    font-size: 14px;
-    font-family: sans-serif;
-    line-height: 18px;
-    margin: 8px 0px 0px 28px;
-    max-width: 100%;
-    white-space: pre-wrap;
+.description {
+  margin-bottom: 16px;
 }
 
 .checkbox-list {
@@ -92,7 +104,6 @@ onMounted(() => {
     flex-direction: column;
     gap: 16px;
 }
-
 
 .list {
   max-width: 700px;
@@ -104,24 +115,15 @@ onMounted(() => {
 }
 
 .title {
-  font-size: 24px;
-}
-
-.list-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: var(--step-vertical);
-}
-
-.list-header > * {
-  margin: 0;
+  font-size: 30px;
+  line-height: calc(2.25 / 1.875);
+  margin-bottom: 4px;
 }
 
 .authors {
-  margin-top: 48px;
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
+  align-items: center;
 }
 </style>

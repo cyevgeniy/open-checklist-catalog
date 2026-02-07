@@ -1,9 +1,9 @@
 <script setup lang="ts">
 const props = defineProps<{
-    title: string
-    description?: string
-    icon?: string
-    stem: string
+  title: string
+  description?: string
+  icon?: string
+  stem: string
 }>()
 
 const routeName = computed(() => `/list-${props.stem}`)
@@ -11,17 +11,28 @@ const _description = computed(() => props.description?.split('\n')[0])
 </script>
 
 <template>
-    <RouterLink class="card" :to="routeName">
-        <div class="card-content">
-            <div class="card-flex">
-                <Icon v-if="icon" :name="icon" :size="24" class="card-icon"/>
-                <div class="card-info">
-                    <h2> {{ title }}</h2>
-                    <p v-if="_description" class="secondary">{{ _description}}</p>
-                </div>
-            </div>
+  <RouterLink
+    class="card"
+    :to="routeName"
+  >
+    <div class="card-content">
+      <div class="card-flex">
+        <Icon
+          v-if="icon"
+          :name="icon"
+          :size="24"
+          class="card-icon"
+        />
+        <div class="card-info">
+          <h2> {{ title }}</h2>
+          <p
+            v-if="_description"
+            class="secondary"
+          >{{ _description }}</p>
         </div>
-    </RouterLink>
+      </div>
+    </div>
+  </RouterLink>
 </template>
 
 <style scoped>

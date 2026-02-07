@@ -11,11 +11,22 @@ const { data } = await useAsyncData(`tag-${tag}`, () => {
 
 <template>
   <div>
-    <h2 class="block"> #{{ tag }}</h2>
-    <CNoChecklists v-if="!data?.length" class="block" />
+    <h2 class="block">
+      #{{ tag }}
+    </h2>
+    <CNoChecklists
+      v-if="!data?.length"
+      class="block"
+    />
     <CGrid class="block">
-      <CChecklistCard v-for="item in data" :key="item.id" :stem="item.stem" :title="item.title || item.stem"
-        :description="item.description" :icon="item._icon" />
+      <CChecklistCard
+        v-for="item in data"
+        :key="item.id"
+        :stem="item.stem"
+        :title="item.title || item.stem"
+        :description="item.description"
+        :icon="item._icon"
+      />
     </CGrid>
   </div>
 </template>

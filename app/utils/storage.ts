@@ -1,35 +1,34 @@
 function isHasLocalStorage() {
-    try {
-        window.localStorage.setItem('t', '1')
-        window.localStorage.removeItem('t')
-        return true
-    }
-    catch {
-        return false
-    }
+  try {
+    window.localStorage.setItem('t', '1')
+    window.localStorage.removeItem('t')
+    return true
+  }
+  catch {
+    return false
+  }
 }
 
 function setItem(key: string, value: string) {
-    window.localStorage.setItem(key, value)
+  window.localStorage.setItem(key, value)
 }
 
 function removeItem(key: string) {
-    window.localStorage.removeItem(key)
+  window.localStorage.removeItem(key)
 }
 
 function getItem(key: string) {
-    return window.localStorage.getItem(key)
+  return window.localStorage.getItem(key)
 }
 
 export function createStorage() {
-    const ok = isHasLocalStorage()
+  const ok = isHasLocalStorage()
 
-
-    return ok ? {
+  return ok
+    ? {
         setItem,
         removeItem,
         getItem,
-    }
-        :
-        undefined
+      }
+    : undefined
 }

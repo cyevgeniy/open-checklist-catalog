@@ -1,6 +1,6 @@
 import { defineCollection, defineContentConfig, z } from '@nuxt/content'
 import type { Checklist } from 'open-checklists'
-import { toZod } from 'tozod'
+import type { toZod } from 'tozod'
 
 const schema: toZod<Checklist> = z.object({
   title: z.string().optional(),
@@ -11,7 +11,7 @@ const schema: toZod<Checklist> = z.object({
   authors: z.array(z.object({
     name: z.string(),
     url: z.string().optional(),
-    avatar: z.string().optional()
+    avatar: z.string().optional(),
   })).optional(),
   items: z.array(z.object({
     id: z.string(),
@@ -21,11 +21,10 @@ const schema: toZod<Checklist> = z.object({
     attachments: z.array(z.object({
       url: z.string(),
       mime_type: z.string(),
-      alt: z.string().optional()
-    })).optional()
-  }))
+      alt: z.string().optional(),
+    })).optional(),
+  })),
 })
-
 
 export default defineContentConfig({
   collections: {
@@ -33,7 +32,6 @@ export default defineContentConfig({
       type: 'data',
       source: '**.json',
       schema,
-    })
-  }
+    }),
+  },
 })
-
