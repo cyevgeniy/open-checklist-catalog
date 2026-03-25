@@ -1,6 +1,6 @@
-import type { Checklist } from 'open-checklists'
+import type { ListsCollectionItem } from '@nuxt/content'
 
-export function useChecklist(list: Ref<Checklist | null | undefined>) {
+export function useChecklist(list: Ref<ListsCollectionItem | null | undefined>) {
   const state = ref<Map<string, boolean>>(new Map())
 
   const blockingIndexes = computed(() => {

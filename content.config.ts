@@ -1,8 +1,8 @@
-import { defineCollection, defineContentConfig, z } from '@nuxt/content'
+import { defineCollection, defineContentConfig } from '@nuxt/content'
 import type { Checklist } from 'open-checklists'
-import type { toZod } from 'tozod'
+import { z } from 'zod'
 
-const schema: toZod<Checklist> = z.object({
+const schema: z.ZodType<Checklist> = z.object({
   title: z.string().optional(),
   description: z.string().optional(),
   _icon: z.string(),
