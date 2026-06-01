@@ -19,7 +19,7 @@
     "@nuxt/content": "^3.12.0",
     "@nuxt/eslint": "^1.14.0",
     "@nuxt/icon": "^2.1.0",
-    "nuxt": "^4.4.2",
+    "nuxt": "^4.4.6",
     "open-checklists": "^0.2.1"
   }
 }
